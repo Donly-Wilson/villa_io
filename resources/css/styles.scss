@@ -1,6 +1,17 @@
+//Base
 @use "./base/reset";
 @use "./base/utilities";
 @use "./base/variables";
+
+//Venders
 @use "./vendors/bootstrap/scss/bootstrap.scss";
+
+//Layouts
 @use "./layouts/main-layout.scss";
-@use "./components/header.scss";
+
+//Components
+@use "./components/header";
+@use "./components/hero";
+
+//Pages
+@use "./pages/listings";

@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 //Home
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/home');
 });
 
 // Show all listings
-Route::get('/{property_type}/{listing_type}', function () {
+Route::get('/{property_type}/{listing_type}/{city}', function () {
     // e.g /apartment/rent or /house/sale
-    return view('welcome');
+    return view('pages/listings');
 });
 
 // Single listing
