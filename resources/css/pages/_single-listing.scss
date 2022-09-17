@@ -1,0 +1,37 @@
+.single-listing-page {
+    .listing-top {
+        position: relative;
+        &__img {
+            position: absolute;
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            object-position: center;
+        }
+        &__form-wrapper {
+            position: absolute;
+            z-index: 2;
+        }
+        &__form {
+            height: 500px;
+            background-color: #fff;
+        }
+        &__form-option,
+        &__form-button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 15px;
+            height: 40px;
+            border: 1px solid rgb(205, 209, 212);
+            border-radius: 5px;
+            margin-right: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            font-weight: 600;
+            &:hover {
+                background-color: rgb(245, 246, 247);
+            }
+        }
+    }
+}

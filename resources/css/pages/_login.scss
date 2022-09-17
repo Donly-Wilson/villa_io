@@ -1,0 +1,68 @@
+.auth-page {
+    //center with grid
+    display: grid;
+    place-items: center;
+    min-height: calc(100vh - 104px);
+    &__form {
+        width: 400px;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid rgb(75, 75, 75);
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+    &__header {
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    &__form-group {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    &__form-label {
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+    &__form-input {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 15px;
+        height: 40px;
+        border: 1px solid rgb(205, 209, 212);
+        border-radius: 5px;
+        margin-right: 0.5rem;
+        transition: all 0.2s ease-in-out;
+        font-weight: 600;
+        &:hover {
+            background-color: rgb(245, 246, 247);
+        }
+        // &:focus {
+        //     border-color: #db691d;
+        // }
+    }
+    &__form-submit {
+        padding: 0px 15px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(219, 105, 29);
+        margin-right: 0;
+        color: #fff;
+        &:hover {
+            background-color: #db691d;
+        }
+    }
+    &__form-register {
+        text-decoration: none;
+        text-align: center;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

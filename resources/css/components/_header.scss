@@ -10,6 +10,8 @@
         font-size: 2.3rem;
         font-weight: uppercase;
         text-transform: uppercase;
+        text-decoration: none;
+        color: #191f26;
     }
     &__menu {
         display: flex;
@@ -42,9 +44,11 @@
         border: 1px solid #234dd4;
         margin-right: 1.5rem;
         color: #3366cc;
-        &:hover,
-        &--active {
-            background-color: #f00;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background-color: #234dd4;
+            color: #fff;
         }
     }
 }

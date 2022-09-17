@@ -18,33 +18,33 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
+// Single listing
+Route::get('/listing/{slug}/{id}', function () {
+    return view('pages/single-listing');
+});
+
 // Show all listings
 Route::get('/{property_type}/{listing_type}/{city}', function () {
     // e.g /apartment/rent or /house/sale
     return view('pages/listings');
 });
 
-// Single listing
-Route::get('/listing/{slug}/{id}', function () {
-    return view('welcome');
-});
-
 // Login
 Route::get('/login', function () {
-    return view('welcome');
-});
+    return view('pages/login');
+})->name('login');
 
 // Register
 Route::get('/register', function () {
-    return view('welcome');
-});
+    return view('pages/register');
+})->name('register');
 
 // User saved listings
 Route::get('/account/saved', function () {
-    return view('welcome');
+    return view('pages/saved-listings');
 });
 
 // User show listing status
 Route::get('/account/show-status', function () {
-    return view('welcome');
+    return view('pages/show-status');
 });

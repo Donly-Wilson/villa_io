@@ -8,6 +8,7 @@
 
 //Layouts
 @use "./layouts/main-layout.scss";
+@use "./layouts/account-layout";
 
 //Components
 @use "./components/header";
@@ -15,3 +16,6 @@
 
 //Pages
 @use "./pages/listings";
+@use "./pages/show-status";
+@use "./pages/login";
+@use "./pages/single-listing";
