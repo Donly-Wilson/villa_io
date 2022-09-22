@@ -23,10 +23,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
+                        <h3 class="account-layout__welcome-back">Welcome back, {{ Auth::user()->name }}</h3>
                         <h2>Menu</h2>
                         <div class="account-layout__menu">
-                            <a class="account-layout__menu-link" href="/account/saved">Saved Listings</a>
-                            <a href="/account/show-status" class="account-layout__menu-link">Listings Request</a>
+                            <a class="account-layout__menu-link" href="{{ route('account') }}">Saved Listings</a>
+                            <a href="{{ route('show-status') }}" class="account-layout__menu-link">Listings Request</a>
                         </div>
                     </div>
                     <div class="col-md-9">

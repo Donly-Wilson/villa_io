@@ -19,3 +19,10 @@
 @use "./pages/show-status";
 @use "./pages/login";
 @use "./pages/single-listing";
+
+.error-sub-text {
+    color: red;
+    font-size: 0.8rem;
+    font-weight: normal;
+    padding: 10px 0;
+}

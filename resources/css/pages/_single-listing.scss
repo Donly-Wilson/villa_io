@@ -1,8 +1,11 @@
+@use "../base/variables" as *;
 .single-listing-page {
     .listing-top {
         position: relative;
+        height: 600px;
         &__img {
             position: absolute;
+            z-index: 1;
             width: 100%;
             height: 600px;
             object-fit: cover;
@@ -11,10 +14,36 @@
         &__form-wrapper {
             position: absolute;
             z-index: 2;
+            width: 100%;
+            height: 600px;
+            .container {
+                height: 600px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
         }
         &__form {
-            height: 500px;
+            width: 300px;
             background-color: #fff;
+            border-radius: 15px;
+            box-shadow: $box_shadow_default;
+            padding: 20px;
+        }
+        &__form-label {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        &__form-group {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            &--horizontal {
+                display: flex;
+                .listing-top__form-option {
+                    width: 100%;
+                }
+            }
         }
         &__form-option,
         &__form-button {
@@ -24,13 +53,100 @@
             justify-content: center;
             padding: 0px 15px;
             height: 40px;
+            width: 100%;
             border: 1px solid rgb(205, 209, 212);
             border-radius: 5px;
             margin-right: 0.5rem;
             transition: all 0.2s ease-in-out;
             font-weight: 600;
+            &:nth-last-child(1) {
+                margin-right: 0;
+            }
             &:hover {
                 background-color: rgb(245, 246, 247);
+            }
+        }
+        &__form-button {
+            color: #fff;
+            background-color: rgb(219, 105, 29);
+            margin-right: 0;
+            &:hover {
+                background-color: rgba(219, 105, 29, 0.9);
+            }
+        }
+    }
+    .listing-info {
+        padding: 50px 0;
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        &-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            max-width: 300px;
+            .listing-info__details {
+                &-icon {
+                    margin-right: 0.5rem;
+                }
+                &-text {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: $light-gray;
+                }
+            }
+        }
+        &__agent-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        &__agent-name {
+            font-size: 1.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+    }
+    .listing-extra {
+        &__details {
+            h2 {
+                font-size: 1.7rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+            }
+            p {
+                line-height: 2;
+                margin-bottom: 2rem;
+            }
+            h3 {
+                font-size: 1.6rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+            }
+            ul {
+                list-style: square;
+                li {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        &__gallery {
+            h2 {
+                font-size: 1.7rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+            }
+            img {
+                width: 100%;
+                // height: 300px;
+                object-fit: cover;
+                object-position: center;
+                margin-bottom: 10px;
+                // margin-bottom: 1rem;
             }
         }
     }

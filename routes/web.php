@@ -13,6 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(
+    [
+        'prefix' => 'admin',
+        'as' => 'admin.',
+        // 'namespace' => 'Admin',
+        // 'middleware' => 'auth'
+    ],
+    function () {
+        Route::get('/', function () {
+            return view('admin/dashboard');
+        })->name('dashboard');
+
+        Route::group([
+            'prefix' => 'listings',
+            'as' => 'listings.',
+        ], function () {
+            Route::get('/', [\App\Http\Controllers\Admin\ListingController::class, 'index'])->name('index');
+            Route::get('/create', [\App\Http\Controllers\Admin\ListingController::class, 'create'])->name('create');
+            Route::post('/', [\App\Http\Controllers\Admin\ListingController::class, 'store'])->name('store');
+            Route::get('/{id}/edit', [\App\Http\Controllers\Admin\ListingController::class, 'edit'])->name('edit');
+            // Route::get('/', 'Admin\ListingController@index')->name('all');
+            // Route::get('/create', 'Admin\ListingController@create')->name('create');
+            // Route::post('/store', 'Admin\ListingController@store')->name('store');
+            // Route::get('/edit/{id}', 'Admin\ListingController@edit')->name('edit');
+            // Route::post('/update/{id}', 'Admin\ListingController@update')->name('update');
+            // Route::get('/delete/{id}', 'Admin\ListingController@delete')->name('delete');
+        });
+    }
+);
+
 //Home
 Route::get('/', function () {
     return view('pages/home');
@@ -27,24 +57,25 @@ Route::get('/listing/{slug}/{id}', function () {
 Route::get('/{property_type}/{listing_type}/{city}', function () {
     // e.g /apartment/rent or /house/sale
     return view('pages/listings');
-});
-
-// Login
-Route::get('/login', function () {
-    return view('pages/login');
-})->name('login');
-
-// Register
-Route::get('/register', function () {
-    return view('pages/register');
-})->name('register');
+})->name('listings');
 
 // User saved listings
-Route::get('/account/saved', function () {
+Route::get('/account', function () {
     return view('pages/saved-listings');
-});
+})->name('account');
 
 // User show listing status
 Route::get('/account/show-status', function () {
     return view('pages/show-status');
-});
+})->name('show-status');
+
+// Route::get('/admin', function () {
+//     return view('admin/dashboard');
+// });
+
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';

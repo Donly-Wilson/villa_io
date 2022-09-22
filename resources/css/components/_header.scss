@@ -50,5 +50,16 @@
             background-color: #234dd4;
             color: #fff;
         }
+        &--anchor {
+            border: none;
+            background-color: transparent;
+            color: #191f26;
+            margin-right: 1.5rem;
+            text-decoration: none;
+            &:hover {
+                background-color: transparent;
+                color: #234dd4;
+            }
+        }
     }
 }
